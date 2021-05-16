@@ -22,7 +22,6 @@ Description of the Topology
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 Load balancing ensures that the application will be highly available in addition to restricting access to the network.
 
-TODO: What aspect of security do load balancers protect? What is the advantage of a jump box? 
 Load Balancers protect against distributed denial of service attacks, and ensure availabilty. The advantage of a jump box is a provide restricted access to your network enviroment
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the opsrating system and system services.
@@ -46,8 +45,7 @@ The configuration details of each machine may be found below.
 Access Policies
 The machines on the internal network are not exposed to the public Internet.
 Only the JumpBox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-
-TODO: Add whitelisted IP addresses
+72.226.31.61
 
 Machines within the network can only be accessed by SSH.
 
@@ -90,7 +88,7 @@ Verify the installation & playbook.
 ...
 
 The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
-Screenshot (60).png
+Screenshot (63).png
 
 
 
