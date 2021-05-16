@@ -113,5 +113,4 @@ Update the hosts file to include the Elk Server IP address of 10.1.0.4 under elk
 
 Run the playbook, ansible-playbook elk-playbook.yml /etc/ansible/http://20.94.215.86:5601 to check that Kibana is running.
 
-As a Bonus, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 
