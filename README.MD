@@ -76,12 +76,15 @@ Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...it allows administrators to automate  their daily tasks. This gives them more time to work on more important tasks.
 The playbook implements the following tasks:
 
+
 Specify a different group of machines as well as a different remote user
 - name: Config Elk Vm with Docker
   hosts: elk
   remote_user: dmalon
   become: true
   tasks:
+
+
 Increase sytem memory
 - name: vm.max_map_count
       sysctl:
@@ -89,6 +92,8 @@ Increase sytem memory
         value: '262144'
         state: present
         reload: yes
+
+
 Install docker.io, python3-pip, docker
     - name: Install docker.io
       apt:
@@ -106,7 +111,9 @@ Install docker.io, python3-pip, docker
       pip:
         name: docker
         state: present
-  Download and Launch the ELK container with these published ports:
+ 
+ 
+ Download and Launch the ELK container with these published ports:
 
     - name: download and launch a docker elk container
       docker_container:
