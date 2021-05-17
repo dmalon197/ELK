@@ -74,33 +74,20 @@ The Jump Box was allowed access the ELK VM It's IP Address was 10.1.0.4 A summar
 
 Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...it allows administrators to automate  their daily tasks. This gives them more time to work on more important tasks.
-The playbook implements the following tasks:
-
-Specify a different group of machines as well as a different remote user
+The playbook implements the following tasks: 
 - name: Config Elk Vm with Docker
   hosts: elk
   remote_user: dmalon
   become: true
   tasks:
 
-
-Increase sytem memory
-- name: vm.max_map_count
-      sysctl:
-        name: vm.max_map_count
-        value: '262144'
-        state: present
-        reload: yes
-
-
-
-Install docker.io, python3-pip, docker
     - name: Install docker.io
       apt:
         force_apt_get: yes
         update_cache: yes
         name: docker.io
         state: present
+
     - name: Install python3-pip
       apt:
         force_apt_get: yes
@@ -111,9 +98,16 @@ Install docker.io, python3-pip, docker
       pip:
         name: docker
         state: present
- 
- 
- Download and Launch the ELK container with these published ports:
+
+    - name: Increase virtual memory
+      command: sysctl -w vm.max_map_count=262144
+
+    - name: vm.max_map_count
+      sysctl:
+        name: vm.max_map_count
+        value: '262144'
+        state: present
+        reload: yes
 
     - name: download and launch a docker elk container
       docker_container:
@@ -131,11 +125,6 @@ Install docker.io, python3-pip, docker
         name: docker.service
         enabled: yes
 
-       
-
-
-...
-...
 
 The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
 
