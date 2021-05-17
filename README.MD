@@ -198,11 +198,13 @@ Line #1806 is where you would edit the file by replacing the IP address with the
     host: "10.1.0.4:5601"
 
   Create a Filebeat playbook to install and launch Filebeat on the Web VMs with DVWA.
+  
   When creating ansible playbooks its important to make sure the begging of the playbook is accurate as that is what indicates where and how the tasks will be executed. For Filebeat and Metricbeat playbooks, you want to makesure that you are having the beats installed on hosts: websevers which is how the playbook will know to install the beats on the websevers we want them to be on.
         The Filebeat playbook should look like this: filebeat-playbook.yml
 
   Run the playbook, and navigate to the Filebeat installation page on the ELK server GUI to check that the installation worked as expected.
-  The ELK server GUI is accessible by navigating to http://[your.VM.IP]:5601/app/kibana. You replace [your.VM.IP] with the Public IP address of the ELK server that we created. If it is not working then the ELK server was created incorrectly and or configured incorrectly
+ 
+ The ELK server GUI is accessible by navigating to http://[your.VM.IP]:5601/app/kibana. You replace [your.VM.IP] with the Public IP address of the ELK server that we created. If it is not working then the ELK server was created incorrectly and or configured incorrectly
   To verify this, scroll down to Step 5: Module Status on the ELK server GUI and click Check Data. If you receive the below image, than the ELK stack was successfully receiving logs:
 
 ![image](https://user-images.githubusercontent.com/78760503/118509051-baafda00-b6fd-11eb-9ea3-ac4b82ab35fc.png)
