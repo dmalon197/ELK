@@ -82,7 +82,6 @@ Specify a different group of machines as well as a different remote use:
   remote_user: dmalon
   become: true
   tasks:
-
 Install docker.io, python3-pip, docker:
     - name: Install docker.io
       apt:
@@ -91,18 +90,18 @@ Install docker.io, python3-pip, docker:
         name: docker.io
         state: present
 
-    - name: Install python3-pip
+   - name: Install python3-pip
       apt:
         force_apt_get: yes
         name: python3-pip
         state: present
 
-    - name: Install docker module
+   - name: Install docker module
       pip:
         name: docker
         state: present
 
-    - name: Increase virtual memory
+   - name: Increase virtual memory
       command: sysctl -w vm.max_map_count=262144
 
 Increase System Memory:
@@ -125,7 +124,7 @@ Download and Launch the ELK container with these published ports:
           - 9200:9200
           - 5044:5044
 
-    - name: docker.service
+   - name: docker.service
       systemd:
         name: docker.service
         enabled: yes
