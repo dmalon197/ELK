@@ -76,14 +76,12 @@ Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...it allows administrators to automate  their daily tasks. This gives them more time to work on more important tasks.
 The playbook implements the following tasks:
 
-
 Specify a different group of machines as well as a different remote user
 - name: Config Elk Vm with Docker
   hosts: elk
   remote_user: dmalon
   become: true
   tasks:
-
 
 
 Increase sytem memory
