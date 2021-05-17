@@ -4,27 +4,29 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the filebeat-playbook.yml file may be used to install only certain pieces of it, such as Filebeat.
 
+    elk.yml.
+    metricbeat-playbook.yml.
+    filebeat-playbook.yml.
+
 
 This document contains the following details:
 
-Description of the Topologu
-Access Policies
-ELK Configuration
-
-Beats in Use
-Machines Being Monitored
-
-
-How to Use the Ansible Build
+    Description of the Topologu
+    Access Policies
+    ELK Configuration
+    Beats in Use
+    Machines Being Monitored
+    How to Use the Ansible Build
 
 
 Description of the Topology
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 Load balancing ensures that the application will be highly available in addition to restricting access to the network.
 
-Load Balancers protect against distributed denial of service attacks, and ensure availabilty. The advantage of a jump box is a provide restricted access to your network enviroment
+    Since load balancers can distribute incoming network traffic across multiple servers, they can add an additional layer of security against Denial of Service (DoS) attacks.
+    
+    Utilizing a JumpBox between the web and elk vms on the network forces all traffic through a single node. Its the same concept of utilizing a gateway router, which is beneficial as it makes it easier to implement routing logic and design networks. You would only have to worry about a few connections between a few machines, rather than connections between all machines.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the opsrating system and system services.
 
 Filebeat monitors file logs, collects log events and forwards them for indexing.
 Metricbeat records metrics and statistics from an operating system and services running on a server_
@@ -140,16 +142,18 @@ The following screenshot displays the result of running docker ps after successf
 
 Target Machines & Beats
 This ELK server is configured to monitor the following machines: 
-   Web1 10.0.0.9 
-   Web2 10.0.0.10
-   Web3 10.0.0.11  
+   
+    Web1 10.0.0.9 
+    Web2 10.0.0.10
+    Web3 10.0.0.11  
 We have installed the following Beats on these machines:
 Filebeat
+Metricbeat
 These Beats allow us to collect the following information from each machine:
 
 Filebeat generates and organizes log files to send to Elasticsearch on the ELK Server. The logs contain information about the file system such as which files have changed and when.
 
-
+Metricbeat collects data from operating systems and from services running on the server. For example, Metricbeat can be used to monitor and analyze CPU and memory.
 
 Installing Beats
 
