@@ -139,7 +139,10 @@ The following screenshot displays the result of running docker ps after successf
 
 
 Target Machines & Beats
-This ELK server is configured to monitor the following machines: Web1 10.0.0.9 Web2 10.0.0.10; Web3 10.0.0.11  
+This ELK server is configured to monitor the following machines: 
+   Web1 10.0.0.9 
+   Web2 10.0.0.10
+   Web3 10.0.0.11  
 We have installed the following Beats on these machines:
 Filebeat
 These Beats allow us to collect the following information from each machine:
@@ -147,7 +150,24 @@ These Beats allow us to collect the following information from each machine:
 Filebeat generates and organizes log files to send to Elasticsearch on the ELK Server. The logs contain information about the file system such as which files have changed and when.
 
 
-These Beats allow us to collect the following information from each machine:
+
+Installing Beats
+
+**Before we completed the below processes its important to navigate to http://[your.VM.IP]:5601/app/kibana. (Replaced [your.VM.IP] with the Public IP address of the ELK server VM).
+
+Installing Filebeat on Web VMs
+
+    Open the ELK server homepage.
+        Click on Add Log Data
+        Choose System Logs
+        Click on the correct OS tab (I used DEB for Linux) under Getting Started to view the correct installation instructions
+
+Installing Metricbeat on Web VMs
+
+    Open the ELK server homepage.
+        Click Add Metric Data.
+        Click Docker Metrics
+        Click on the correct OS tab (I used DEB for Linux) under Getting Started to view the correct installation instructions
 
 
 Using the Playbook
