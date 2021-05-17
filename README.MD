@@ -100,12 +100,7 @@ Install docker.io, python3-pip, docker
       pip:
         name: docker
         state: present
-  - name: vm.max_map_count
-      sysctl:
-        name: vm.max_map_count
-        value: '262144'
-        state: present
-        reload: yes
+  
 
 
 Download and Launch the ELK container with these published ports:
