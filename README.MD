@@ -83,7 +83,6 @@ Specify a different group of machines as well as a different remote user
   become: true
   tasks:
 
-
 Increase sytem memory
 - name: vm.max_map_count
       sysctl:
