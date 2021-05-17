@@ -172,11 +172,30 @@ Installing Metricbeat on Web VMs
 
 Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
+
+Filebeat
 SSH into the control node and follow the steps below:
-Copy the install-elk.yml file to Ansible container folder /etc/ansible/files/.
 
-Update the hosts file to include the Elk Server IP address of 10.1.0.4 under elkservers
+    Copy the filebeat-configuration.yml file filebeat-configuration to your Ansible container.
+    Update the filebeat-configuration.yml file to include:
 
-Run the playbook, ansible-playbook elk-playbook.yml /etc/ansible/http://20.94.215.86:5601 to check that Kibana is running.
+Line #1106 is where you would edit the file by replacing the IP address with the IP address of your ELK machine
 
+output.elasticsearch:
+hosts: ["10.1.0.4:9200"]
+username: "elastic"
+password: "changeme"
+
+Line #1806 is where you would edit the file by replacing the IP address with the IP address of your ELK machine
+
+setup.kibana:
+host: "10.1.0.4:5601"
+
+        Create a Filebeat playbook to install and launch Filebeat on the Web VMs with DVWA.
+        When creating ansible playbooks its important to make sure the begging of the playbook is accurate as that is what indicates where and how the tasks will be executed. For Filebeat and Metricbeat playbooks, you want to makesure that you are having the beats installed on hosts: websevers which is how the playbook will know to install the beats on the websevers we want them to be on.
+        The Filebeat playbook should look like this: filebeat-playbook.yml
+
+    Run the playbook, and navigate to the Filebeat installation page on the ELK server GUI to check that the installation worked as expected.
+        The ELK server GUI is accessible by navigating to http://[your.VM.IP]:5601/app/kibana. You replace [your.VM.IP] with the Public IP address of the ELK server that we created. If it is not working then the ELK server was created incorrectly and or configured incorrectly
+        To verify this, scroll down to Step 5: Module Status on the ELK server GUI and click Check Data. If you receive the below image, than the ELK stack was successfully receiving logs:
 
