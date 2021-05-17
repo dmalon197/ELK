@@ -101,32 +101,32 @@ Install docker.io, python3-pip, docker:
       pip:
         name: docker
         state: present
-Increae system memory:
+Increase system memory:
      
     - name: Increase virtual memory
       command: sysctl -w vm.max_map_count=262144
 
-Increase System Memory:
-    - name: vm.max_map_count
-      sysctl:
-        name: vm.max_map_count
-        value: '262144'
-        state: present
-        reload: yes
+     - name: vm.max_map_count
+       sysctl:
+         name: vm.max_map_count
+         value: '262144'
+         state: present
+         reload: yes
 
 Download and Launch the ELK container with these published ports:
+     
      - name: download and launch a docker elk container
-        docker_container:
-        name: elk
-        image: sebp/elk:761
-        state: started
-        restart_policy: always
-        published_ports:
-          - 5601:5601
-          - 9200:9200
-          - 5044:5044
+       docker_container:
+         name: elk
+         image: sebp/elk:761
+         state: started
+         restart_policy: always
+         published_ports:
+           - 5601:5601
+           - 9200:9200
+           - 5044:5044
 
-   - name: docker.service
+    - name: docker.service
       systemd:
         name: docker.service
         enabled: yes
