@@ -82,7 +82,6 @@ Specify a different group of machines as well as a different remote user
   remote_user: dmalon
   become: true
   tasks:
-
 Increase sytem memory
 - name: vm.max_map_count
       sysctl:
@@ -90,7 +89,6 @@ Increase sytem memory
         value: '262144'
         state: present
         reload: yes
-
 Install docker.io, python3-pip, docker
     - name: Install docker.io
       apt:
@@ -108,10 +106,7 @@ Install docker.io, python3-pip, docker
       pip:
         name: docker
         state: present
-  
-
-
-Download and Launch the ELK container with these published ports:
+  Download and Launch the ELK container with these published ports:
 
     - name: download and launch a docker elk container
       docker_container:
