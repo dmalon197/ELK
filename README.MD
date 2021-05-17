@@ -181,15 +181,15 @@ SSH into the control node and follow the steps below:
 
 Line #1106 is where you would edit the file by replacing the IP address with the IP address of your ELK machine
 
-output.elasticsearch:
-hosts: ["10.1.0.4:9200"]
-username: "elastic"
-password: "changeme"
+     output.elasticsearch:
+    hosts: ["10.1.0.4:9200"]
+    username: "elastic"
+    password: "changeme"
 
 Line #1806 is where you would edit the file by replacing the IP address with the IP address of your ELK machine
 
-setup.kibana:
-host: "10.1.0.4:5601"
+    setup.kibana:
+    host: "10.1.0.4:5601"
 
   Create a Filebeat playbook to install and launch Filebeat on the Web VMs with DVWA.
   When creating ansible playbooks its important to make sure the begging of the playbook is accurate as that is what indicates where and how the tasks will be executed. For Filebeat and Metricbeat playbooks, you want to makesure that you are having the beats installed on hosts: websevers which is how the playbook will know to install the beats on the websevers we want them to be on.
