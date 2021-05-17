@@ -100,8 +100,6 @@ Install docker.io, python3-pip, docker
       pip:
         name: docker
         state: present
-
-Increase System Memory
   - name: vm.max_map_count
       sysctl:
         name: vm.max_map_count
