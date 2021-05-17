@@ -200,4 +200,4 @@ Line #1806 is where you would edit the file by replacing the IP address with the
   To verify this, scroll down to Step 5: Module Status on the ELK server GUI and click Check Data. If you receive the below image, than the ELK stack was successfully receiving logs:
 
 
-![image](https://user-images.githubusercontent.com/78760503/118508641-5d1b8d80-b6fd-11eb-8012-875514652794.png)
+
