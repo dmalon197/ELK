@@ -88,7 +88,8 @@ Verify the installation & playbook.
 ...
 
 The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
-Screenshot (63).png
+
+![image](https://user-images.githubusercontent.com/78760503/118497425-0f9a2300-b6f3-11eb-9ba9-5f8bd59299d2.png)
 
 
 
