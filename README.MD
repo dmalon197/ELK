@@ -148,7 +148,9 @@ This ELK server is configured to monitor the following machines:
     Web3 10.0.0.11  
 We have installed the following Beats on these machines:
 Filebeat
+
 Metricbeat
+
 These Beats allow us to collect the following information from each machine:
 
 Filebeat generates and organizes log files to send to Elasticsearch on the ELK Server. The logs contain information about the file system such as which files have changed and when.
