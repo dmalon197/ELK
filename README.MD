@@ -104,9 +104,8 @@ Install docker.io, python3-pip, docker
 Increase System Memory
    - name: Increase virtual memory
       command: sysctl -w vm.max_map_count=262144
-
-    - name: vm.max_map_count
-      sysctl:
+-  - name: vm.max_map_count
+        sysctl:
         name: vm.max_map_count
         value: '262144'
         state: present
